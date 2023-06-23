@@ -18,4 +18,9 @@ class admin
     $stmt->execute();
     return count($stmt->fetchAll(PDO::FETCH_ASSOC));
   }
+
+  public function getByTimeUpdate()
+  {
+    
+  }
 }
