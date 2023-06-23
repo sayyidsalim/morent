@@ -1,4 +1,9 @@
 <?php
+require_once __DIR__ . "/../repository/admin.php";
+$admin = new admin;
+for ($i = 1; $i <= 6; $i++) {
+  $data[$i] = $admin->getByStatistict($i);
+}
 
 require_once __DIR__ . "/../repository/search.php";
 if (isset($_POST["search"])) {
@@ -20,8 +25,8 @@ if (isset($_POST["search"])) {
     /**
      * disini saya membuat sebuah script untuk memanggil canvas yang akan mengisi sebuah halaman dashbord statistict fitur
      */
+    var kategori = ["sport", "SUV", "MPV", "sedan", "coupe", "hatchback"];
     window.onload = function() {
-
       var options = {
         animationEnabled: true,
         data: [{
@@ -31,28 +36,28 @@ if (isset($_POST["search"])) {
           legendText: "{label}",
           indexLabel: "{label}: #percent%",
           dataPoints: [{
-              label: "sport",
-              y: 1
+              label: kategori[0],
+              y: <?= $data[1] ?>
             },
             {
-              label: "Discount Stores",
-              y: 1
+              label: kategori[1],
+              y: <?= $data[2] ?>
             },
             {
-              label: "Stores for Men / Women",
-              y: 1
+              label: kategori[2],
+              y: <?= $data[3] ?>
             },
             {
-              label: "Teenage Specialty Stores",
-              y: 1
+              label: kategori[3],
+              y: <?= $data[4] ?>
             },
             {
-              label: "All other outlets",
-              y: 1
+              label: kategori[4],
+              y: <?= $data[5] ?>
             },
             {
-              label: "All other outlets",
-              y: 1
+              label: kategori[5],
+              y: <?= $data[6] ?>
             }
           ]
         }]

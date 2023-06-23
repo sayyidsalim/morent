@@ -1,9 +1,8 @@
-<?php include_once __DIR__ . "/header.php" ?>
-<?php
 
-?>
+<?php include_once __DIR__ . "/header.php" ?>
 <div class="container-dashbord flex gap-10">
-  <?php include_once __DIR__ . "/sidebaradmin.php" ?>
+  <?php include_once __DIR__ . "/sidebaradmin.php" 
+  ?>
   <div class="content-dashbord flex mt-10 mb-10 gap-6 flex-wrap justify-center">
     <div class="detail-cars bg-white w-[534px] p-4 rounded-lg">
       <h1 class="font-bold text-xl font-serif">Detail Rental</h1>
@@ -96,17 +95,21 @@
       <div class="recent-transaction w-[534px] bg-white p-4 rounded-xl">
         <h1 class="font-bold text-2xl">Recent Transaction</h1>
 
-        <span class="flex justify-between mt-4">
-          <img src="../img/image.png" alt="" width="132" class="">
-          <span class="">
-            <h4 class="font-bold text-md mr-24"> Nisan Gt</h4>
-            <p class="text-sm font-bold text-slate-400">sport</p>
-          </span>
-          <span>
-            <p class="text-slate-300 font-bold">12 juli</p>
-            <h4 class="font-bold text-xl">$80.00</h4>
-          </span>
-        </span>
+        <a href="?id=<?= $_GET["id"] ?>">
+          <div class="">
+            <span class="flex justify-between mt-4">
+              <img src="../img/image.png" alt="" width="132" class="">
+              <span class="">
+                <h4 class="font-bold text-md mr-24"> Nisan Gt</h4>
+                <p class="text-sm font-bold text-slate-400">sport</p>
+              </span>
+              <span>
+                <p class="text-slate-300 font-bold">12 juli</p>
+                <h4 class="font-bold text-xl">$80.00</h4>
+              </span>
+            </span>
+          </div>
+        </a>
 
       </div>
     </div>
