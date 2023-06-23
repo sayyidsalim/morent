@@ -19,8 +19,11 @@ class admin
     return count($stmt->fetchAll(PDO::FETCH_ASSOC));
   }
 
-  public function getByTimeUpdate()
+  public function getByTimeUpdate(): array
   {
-    
+    $sql = "SELECT waktu_order, products.name, gambar.gambar_1, products.harga, products.name FROM ordercar JOIN products ON product_id = products.id JOIN gambar ON products.gambar_id = gambar.id JOIN type ON products.type_id = type.id ORDER BY waktu_order DESC LIMIT 7";
+    $stmt = $this->connection->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 }

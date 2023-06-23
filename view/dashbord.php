@@ -1,4 +1,6 @@
-
+<?php 
+include_once __DIR__ . "/../repository/admin.php";
+?>
 <?php include_once __DIR__ . "/header.php" ?>
 <div class="container-dashbord flex gap-10">
   <?php include_once __DIR__ . "/sidebaradmin.php" 
