@@ -4,7 +4,6 @@ $admin = new admin;
 for ($i = 1; $i <= 6; $i++) {
   $data[$i] = $admin->getByStatistict($i);
 }
-
 require_once __DIR__ . "/../repository/search.php";
 if (isset($_POST["search"])) {
   $search = new search;
